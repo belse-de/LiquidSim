@@ -5,18 +5,18 @@
 
 WORKDIR = `pwd`
 
-CC = gcc
+CC = g++
 CXX = g++
 AR = ar
 LD = g++
 WINDRES = windres
 
-INC = -IC:/Development/SDL/SDL2-2.0.3/i686-w64-mingw32/include/SDL2 -IC:/Development/SDL/SDL2_image-2.0.0/i686-w64-mingw32/include/SDL2 -IC:/Development/SDL/SDL2_ttf-2.0.12/i686-w64-mingw32/include/SDL2 -IC:/Development/SDL/SDL2_mixer-2.0.0/i686-w64-mingw32/include/SDL2 -IC:/Development/SDL/SDL2_net-2.0.0/i686-w64-mingw32/include/SDL2
+INC = -I/usr/include/SDL2
 CFLAGS = -std=c++11 -fexceptions
 RESINC = 
-LIBDIR = -LC:/Development/SDL/SDL2-2.0.3/i686-w64-mingw32/lib -LC:/Development/SDL/SDL2_image-2.0.0/i686-w64-mingw32/lib -LC:/Development/SDL/SDL2_ttf-2.0.12/i686-w64-mingw32/lib -LC:/Development/SDL/SDL2_mixer-2.0.0/i686-w64-mingw32/lib -LC:/Development/SDL/SDL2_net-2.0.0/i686-w64-mingw32/lib
-LIB = 
-LDFLAGS = -lmingw32 -lSDL2main -lSDL2 -lSDL2_image -lSDL2_ttf -lSDL2_mixer -lSDL2_net
+LIBDIR =
+LIB =
+LDFLAGS = -lSDL2 -lSDL2_image -lSDL2_ttf -lSDL2_mixer -lSDL2_net
 
 INC_DEBUG = $(INC) -Iinclude
 CFLAGS_DEBUG = $(CFLAGS) -Wnon-virtual-dtor -Wshadow -Winit-self -Wredundant-decls -Wcast-align -Wundef -Wfloat-equal -Winline -Wunreachable-code -Wmissing-declarations -Wmissing-include-dirs -Wswitch-enum -Wswitch-default -Weffc++ -Wmain -Wextra -Wall -pg -g
@@ -24,7 +24,7 @@ RESINC_DEBUG = $(RESINC)
 RCFLAGS_DEBUG = $(RCFLAGS)
 LIBDIR_DEBUG = $(LIBDIR)
 LIB_DEBUG = $(LIB)
-LDFLAGS_DEBUG = $(LDFLAGS) -pg -lgmon
+LDFLAGS_DEBUG = $(LDFLAGS) -pg
 OBJDIR_DEBUG = obj/Debug
 DEP_DEBUG = 
 OUT_DEBUG = bin/Debug/Test
