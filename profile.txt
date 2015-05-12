@@ -1,0 +1,128 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  ms/call  ms/call  name    
+ 50.25    203.01   203.01     3750    54.14    54.19  LiquidSim::diffuse(int, int, float*, float*, float, float)
+ 38.38    358.06   155.04     2500    62.02    62.16  LiquidSim::project(int, float*, float*, float*, float*)
+  7.60    388.76    30.71     3750     8.19     8.20  LiquidSim::advect(int, int, float*, float*, float*, float*, float)
+  0.89    392.37     3.60     3750     0.96     0.96  LiquidSim::copy_values(int, float*, float*, float)
+  0.88    395.93     3.56     5000     0.71     0.71  LiquidSim::set_source(int, float*, float*, float)
+  0.83    399.30     3.37     1250     2.70     2.70  renderFloats2RGBA8888(SDL_Texture*, int, int, float*, float*)
+  0.81    402.57     3.27     3753     0.87     0.87  LiquidSim::add_source(int, float*, float*, float)
+  0.20    403.39     0.82                             _fu13___ZSt4cout
+  0.14    403.96     0.57    95075     0.01     0.01  LiquidSim::set_bnd(int, int, float*)
+  0.00    403.98     0.01                             __chkstk_ms
+  0.00    403.98     0.01                             _fu7___ZSt4cout
+  0.00    403.98     0.00     1250     0.00     2.70  LiquidSim::render(int, float*, SDL_Texture*)
+  0.00    403.98     0.00     1250     0.00   250.84  LiquidSim::vel_step(int, float*, float*, float*, float*, float, float)
+  0.00    403.98     0.00     1250     0.00    63.25  LiquidSim::dens_step(int, float*, float*, float*, float*, float, float)
+  0.00    403.98     0.00        1     0.00     0.00  SDL_main
+  0.00    403.98     0.00        1     0.00     0.00  SdlApp::draw()
+  0.00    403.98     0.00        1     0.00     0.00  SdlApp::loop()
+  0.00    403.98     0.00        1     0.00     0.00  SdlApp::SdlApp(int, int)
+  0.00    403.98     0.00        1     0.00     0.00  SdlApp::~SdlApp()
+  0.00    403.98     0.00        1     0.00     0.00  LiquidSim::LiquidSim()
+
+			Call graph
+
+
+granularity: each sample hit covers 4 byte(s) for 0.00% of 403.98 seconds
+
+index % time    self  children    called     name
+                                                 <spontaneous>
+[1]    100.0    0.82  403.14                 _fu13___ZSt4cout [1]
+                0.00  313.54    1250/1250        LiquidSim::vel_step(int, float*, float*, float*, float*, float, float) [2]
+                0.00   79.07    1250/1250        LiquidSim::dens_step(int, float*, float*, float*, float*, float, float) [5]
+                3.60    0.00    3750/3750        LiquidSim::copy_values(int, float*, float*, float) [7]
+                3.56    0.00    5000/5000        LiquidSim::set_source(int, float*, float*, float) [8]
+                0.00    3.37    1250/1250        LiquidSim::render(int, float*, SDL_Texture*) [10]
+-----------------------------------------------
+                0.00  313.54    1250/1250        _fu13___ZSt4cout [1]
+[2]     77.6    0.00  313.54    1250         LiquidSim::vel_step(int, float*, float*, float*, float*, float, float) [2]
+              155.04    0.36    2500/2500        LiquidSim::project(int, float*, float*, float*, float*) [4]
+              135.34    0.13    2500/3750        LiquidSim::diffuse(int, int, float*, float*, float, float) [3]
+               20.47    0.02    2500/3750        LiquidSim::advect(int, int, float*, float*, float*, float*, float) [6]
+                2.18    0.00    2500/3753        LiquidSim::add_source(int, float*, float*, float) [11]
+-----------------------------------------------
+               67.67    0.06    1250/3750        LiquidSim::dens_step(int, float*, float*, float*, float*, float, float) [5]
+              135.34    0.13    2500/3750        LiquidSim::vel_step(int, float*, float*, float*, float*, float, float) [2]
+[3]     50.3  203.01    0.19    3750         LiquidSim::diffuse(int, int, float*, float*, float, float) [3]
+                0.19    0.00   31325/95075       LiquidSim::set_bnd(int, int, float*) [12]
+-----------------------------------------------
+              155.04    0.36    2500/2500        LiquidSim::vel_step(int, float*, float*, float*, float*, float, float) [2]
+[4]     38.5  155.04    0.36    2500         LiquidSim::project(int, float*, float*, float*, float*) [4]
+                0.36    0.00   60000/95075       LiquidSim::set_bnd(int, int, float*) [12]
+-----------------------------------------------
+                0.00   79.07    1250/1250        _fu13___ZSt4cout [1]
+[5]     19.6    0.00   79.07    1250         LiquidSim::dens_step(int, float*, float*, float*, float*, float, float) [5]
+               67.67    0.06    1250/3750        LiquidSim::diffuse(int, int, float*, float*, float, float) [3]
+               10.24    0.01    1250/3750        LiquidSim::advect(int, int, float*, float*, float*, float*, float) [6]
+                1.09    0.00    1250/3753        LiquidSim::add_source(int, float*, float*, float) [11]
+-----------------------------------------------
+               10.24    0.01    1250/3750        LiquidSim::dens_step(int, float*, float*, float*, float*, float, float) [5]
+               20.47    0.02    2500/3750        LiquidSim::vel_step(int, float*, float*, float*, float*, float, float) [2]
+[6]      7.6   30.71    0.02    3750         LiquidSim::advect(int, int, float*, float*, float*, float*, float) [6]
+                0.02    0.00    3750/95075       LiquidSim::set_bnd(int, int, float*) [12]
+-----------------------------------------------
+                3.60    0.00    3750/3750        _fu13___ZSt4cout [1]
+[7]      0.9    3.60    0.00    3750         LiquidSim::copy_values(int, float*, float*, float) [7]
+-----------------------------------------------
+                3.56    0.00    5000/5000        _fu13___ZSt4cout [1]
+[8]      0.9    3.56    0.00    5000         LiquidSim::set_source(int, float*, float*, float) [8]
+-----------------------------------------------
+                3.37    0.00    1250/1250        LiquidSim::render(int, float*, SDL_Texture*) [10]
+[9]      0.8    3.37    0.00    1250         renderFloats2RGBA8888(SDL_Texture*, int, int, float*, float*) [9]
+-----------------------------------------------
+                0.00    3.37    1250/1250        _fu13___ZSt4cout [1]
+[10]     0.8    0.00    3.37    1250         LiquidSim::render(int, float*, SDL_Texture*) [10]
+                3.37    0.00    1250/1250        renderFloats2RGBA8888(SDL_Texture*, int, int, float*, float*) [9]
+-----------------------------------------------
+                0.00    0.00       3/3753        _fu20___ZSt4cerr [15]
+                1.09    0.00    1250/3753        LiquidSim::dens_step(int, float*, float*, float*, float*, float, float) [5]
+                2.18    0.00    2500/3753        LiquidSim::vel_step(int, float*, float*, float*, float*, float, float) [2]
+[11]     0.8    3.27    0.00    3753         LiquidSim::add_source(int, float*, float*, float) [11]
+-----------------------------------------------
+                0.02    0.00    3750/95075       LiquidSim::advect(int, int, float*, float*, float*, float*, float) [6]
+                0.19    0.00   31325/95075       LiquidSim::diffuse(int, int, float*, float*, float, float) [3]
+                0.36    0.00   60000/95075       LiquidSim::project(int, float*, float*, float*, float*) [4]
+[12]     0.1    0.57    0.00   95075         LiquidSim::set_bnd(int, int, float*) [12]
+-----------------------------------------------
+                                                 <spontaneous>
+[13]     0.0    0.01    0.00                 __chkstk_ms [13]
+-----------------------------------------------
+                                                 <spontaneous>
+[14]     0.0    0.01    0.00                 _fu7___ZSt4cout [14]
+-----------------------------------------------
+                                                 <spontaneous>
+[15]     0.0    0.00    0.00                 _fu20___ZSt4cerr [15]
+                0.00    0.00       3/3753        LiquidSim::add_source(int, float*, float*, float) [11]
+-----------------------------------------------
+                0.00    0.00       1/1           console_main [245]
+[17]     0.0    0.00    0.00       1         SDL_main [17]
+-----------------------------------------------
+                0.00    0.00       1/1           _fu1___ZSt4cout [222]
+[18]     0.0    0.00    0.00       1         SdlApp::draw() [18]
+-----------------------------------------------
+                0.00    0.00       1/1           _fu1___ZSt4cout [222]
+[19]     0.0    0.00    0.00       1         SdlApp::loop() [19]
+-----------------------------------------------
+                0.00    0.00       1/1           _fu1___ZSt4cout [222]
+[20]     0.0    0.00    0.00       1         SdlApp::SdlApp(int, int) [20]
+-----------------------------------------------
+                0.00    0.00       1/1           _fu1___ZSt4cout [222]
+[21]     0.0    0.00    0.00       1         SdlApp::~SdlApp() [21]
+-----------------------------------------------
+                0.00    0.00       1/1           _fu19___ZSt4cerr [221]
+[22]     0.0    0.00    0.00       1         LiquidSim::LiquidSim() [22]
+-----------------------------------------------
+
+Index by function name
+
+  [17] SDL_main                [8] LiquidSim::set_source(int, float*, float*, float) [2] LiquidSim::vel_step(int, float*, float*, float*, float*, float, float)
+   [9] renderFloats2RGBA8888(SDL_Texture*, int, int, float*, float*) [7] LiquidSim::copy_values(int, float*, float*, float) [5] LiquidSim::dens_step(int, float*, float*, float*, float*, float, float)
+  [18] SdlApp::draw()          [6] LiquidSim::advect(int, int, float*, float*, float*, float*, float) [22] LiquidSim::LiquidSim()
+  [19] SdlApp::loop()         [10] LiquidSim::render(int, float*, SDL_Texture*) [13] __chkstk_ms
+  [20] SdlApp::SdlApp(int, int) [3] LiquidSim::diffuse(int, int, float*, float*, float, float) [1] _fu13___ZSt4cout
+  [21] SdlApp::~SdlApp()       [4] LiquidSim::project(int, float*, float*, float*, float*) [14] _fu7___ZSt4cout
+  [11] LiquidSim::add_source(int, float*, float*, float) [12] LiquidSim::set_bnd(int, int, float*)
