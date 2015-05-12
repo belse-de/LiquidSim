@@ -1,0 +1,1 @@
+c:\Development\MinGW\bin\gprof.exe -b bin\Debug\*.exe > profile.linewise.txt
