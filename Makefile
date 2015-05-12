@@ -27,7 +27,7 @@ LIB_DEBUG = $(LIB)
 LDFLAGS_DEBUG = $(LDFLAGS) -pg
 OBJDIR_DEBUG = obj/Debug
 DEP_DEBUG = 
-OUT_DEBUG = bin/Debug/Test
+OUT_DEBUG = bin/Debug/liquidSim
 
 INC_RELEASE = $(INC) -Iinclude
 CFLAGS_RELEASE = $(CFLAGS) -O2 -Wfatal-errors
@@ -38,7 +38,7 @@ LIB_RELEASE = $(LIB)
 LDFLAGS_RELEASE = $(LDFLAGS) -s
 OBJDIR_RELEASE = obj/Release
 DEP_RELEASE = 
-OUT_RELEASE = bin/Release/Test
+OUT_RELEASE = bin/Release/liquidSim
 
 OBJ_DEBUG = $(OBJDIR_DEBUG)/main.o $(OBJDIR_DEBUG)/src/sdltexture.o $(OBJDIR_DEBUG)/src/sdlimgerror.o $(OBJDIR_DEBUG)/src/sdlerror.o $(OBJDIR_DEBUG)/src/sdl.o $(OBJDIR_DEBUG)/src/renderer.o $(OBJDIR_DEBUG)/src/liquidsim.o
 
