@@ -3,9 +3,47 @@ http://www.openblas.net/
 https://root.cern.ch/root/html/
 https://root.cern.ch/root/html/math.h
 https://root.cern.ch/root/html/LibraryDependencies.html
+http://math-atlas.sourceforge.net/
 
+http://math.nist.gov/iml++/
+http://math.nist.gov/sparselib++/
+http://math.nist.gov/mv++/
+
+http://nptel.ac.in/courses/105103026/34
+
+//http://www.dgp.toronto.edu/~stam/reality/Research/pub.html
+//http://autodeskresearch.com/pdf/talks/jos_gdc03.pdf
+//http://www.dgp.toronto.edu/people/stam/reality/Research/pdf/GDC03.pdf
+//http://www.dgp.utoronto.ca/~stam/reality/Talks/FluidsTalk/FluidsTalkNotes.pdf
+//http://www.mat.ucsb.edu/~wakefield/594cm/assignment.htm
+//http://www.gamasutra.com/view/feature/1549/practical_fluid_dynamics_part_1.php?print=1
+
+http://lazyfoo.net/tutorials/SDL/
+https://www.gitignore.io/
+
+//http://www.ppsloan.org/publications/XYZJCGT.pdf
+//Simple Analytic Approximations to the CIE XYZ
+//Color Matching Functions
+// Inputs: Wavelength in nanometers
+
+Atlass lib
+
+#define SWAP(x0,x) {float *tmp=x0;x0=x;x=tmp;}
+#define IX(i,j) ((i)+(N+2)*(j))
+#define min(x,y) ((x)<(y))?(x):(y)
+#define max(x,y) ((x)>(y))?(x):(y)
+#define minmax(x,y,z) min(max((x),(y)),(z))
+
+/*
+-march=native
+-ffast-math
+-funsafe-math-optimizations
+-ftree-vectorize
+-ftree-vectorizer-verbose=1
+*/
 
 #include <mmintrin.h>
+#include <x86intrin.h>
 
 float minss ( float a, float b )
 {
