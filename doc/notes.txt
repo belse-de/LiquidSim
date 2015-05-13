@@ -1,0 +1,71 @@
+https://logging.apache.org/log4cxx/
+
+file:///C:/Octave/Octave-3.8.2/README.html
+http://www.openblas.net/
+https://root.cern.ch/root/html/
+https://root.cern.ch/root/html/math.h
+https://root.cern.ch/root/html/LibraryDependencies.html
+http://math-atlas.sourceforge.net/
+
+http://math.nist.gov/iml++/
+http://math.nist.gov/sparselib++/
+http://math.nist.gov/mv++/
+
+http://nptel.ac.in/courses/105103026/34
+
+http://www.dgp.toronto.edu/~stam/reality/Research/pub.html
+http://autodeskresearch.com/pdf/talks/jos_gdc03.pdf
+http://www.dgp.toronto.edu/people/stam/reality/Research/pdf/GDC03.pdf
+http://www.dgp.utoronto.ca/~stam/reality/Talks/FluidsTalk/FluidsTalkNotes.pdf
+http://www.mat.ucsb.edu/~wakefield/594cm/assignment.htm
+http://www.gamasutra.com/view/feature/1549/practical_fluid_dynamics_part_1.php?print=1
+
+http://lazyfoo.net/tutorials/SDL/
+https://www.gitignore.io/
+
+//http://www.ppsloan.org/publications/XYZJCGT.pdf
+//Simple Analytic Approximations to the CIE XYZ
+//Color Matching Functions
+// Inputs: Wavelength in nanometers
+
+Atlass lib
+
+#define SWAP(x0,x) {float *tmp=x0;x0=x;x=tmp;}
+#define IX(i,j) ((i)+(N+2)*(j))
+#define min(x,y) ((x)<(y))?(x):(y)
+#define max(x,y) ((x)>(y))?(x):(y)
+#define minmax(x,y,z) min(max((x),(y)),(z))
+
+/*
+-march=native
+-ffast-math
+-funsafe-math-optimizations
+-ftree-vectorize
+-ftree-vectorizer-verbose=1
+*/
+
+#include <mmintrin.h>
+#include <x86intrin.h>
+
+float minss ( float a, float b )
+{
+    // Branchless SSE min.
+    _mm_store_ss( &a, _mm_min_ss(_mm_set_ss(a),_mm_set_ss(b)) );
+    return a;
+}
+
+float maxss ( float a, float b )
+{
+    // Branchless SSE max.
+    _mm_store_ss( &a, _mm_max_ss(_mm_set_ss(a),_mm_set_ss(b)) );
+    return a;
+}
+
+float clamp ( float val, float minval, float maxval )
+{
+    // Branchless SSE clamp.
+    // return minss( maxss(val,minval), maxval );
+
+    _mm_store_ss( &val, _mm_min_ss( _mm_max_ss(_mm_set_ss(val),_mm_set_ss(minval)), _mm_set_ss(maxval) ) );
+    return val;
+}

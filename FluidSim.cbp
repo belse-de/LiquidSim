@@ -2,12 +2,13 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="Test" />
+		<Option title="FluidSim" />
+		<Option makefile="makefile" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="bin/Debug/Test" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Debug/FluidSim" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -31,19 +32,20 @@
 					<Add option="-Wall" />
 					<Add option="-pg" />
 					<Add option="-g" />
-					<Add directory="include" />
+					<Add directory="inc" />
 				</Compiler>
 				<Linker>
 					<Add option="-pg -lgmon" />
 				</Linker>
 			</Target>
 			<Target title="Release">
-				<Option output="bin/Release/Test" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Release/FluidSim" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
-					<Add option="-O2" />
+					<Add option="-fomit-frame-pointer" />
+					<Add option="-O" />
 					<Add option="-Wfatal-errors" />
 					<Add directory="include" />
 				</Compiler>
@@ -69,65 +71,38 @@
 			<Add directory="C:/Development/SDL/SDL2_mixer-2.0.0/i686-w64-mingw32/lib" />
 			<Add directory="C:/Development/SDL/SDL2_net-2.0.0/i686-w64-mingw32/lib" />
 		</Linker>
-		<Unit filename="include/ICol2D.h" />
-		<Unit filename="include/cfield.h" />
-		<Unit filename="include/cfluid.h" />
-		<Unit filename="include/cg.h" />
-		<Unit filename="include/cmatrix.h" />
-		<Unit filename="include/field.hpp" />
-		<Unit filename="include/fluid.hpp" />
-		<Unit filename="include/liquidsim.h" />
-		<Unit filename="include/main.hpp" />
-		<Unit filename="include/potentionalfield.hpp" />
-		<Unit filename="include/renderer.h" />
-		<Unit filename="include/sdl.hpp" />
-		<Unit filename="include/sdlerror.hpp" />
-		<Unit filename="include/sdlimgerror.hpp" />
-		<Unit filename="include/sdltexture.hpp" />
-		<Unit filename="include/vector2.h" />
-		<Unit filename="include/vectorfield.h" />
-		<Unit filename="lib/LICENSE.FLAC.txt" />
-		<Unit filename="lib/LICENSE.freetype.txt" />
-		<Unit filename="lib/LICENSE.jpeg.txt" />
-		<Unit filename="lib/LICENSE.modplug.txt" />
-		<Unit filename="lib/LICENSE.ogg-vorbis.txt" />
-		<Unit filename="lib/LICENSE.png.txt" />
-		<Unit filename="lib/LICENSE.smpeg.txt" />
-		<Unit filename="lib/LICENSE.tiff.txt" />
-		<Unit filename="lib/LICENSE.webp.txt" />
-		<Unit filename="lib/LICENSE.zlib.txt" />
-		<Unit filename="lib/SDL2.dll" />
-		<Unit filename="lib/SDL2_image.dll" />
-		<Unit filename="lib/SDL2_mixer.dll" />
-		<Unit filename="lib/SDL2_net.dll" />
-		<Unit filename="lib/SDL2_ttf.dll" />
-		<Unit filename="lib/libFLAC-8.dll" />
-		<Unit filename="lib/libfreetype-6.dll" />
-		<Unit filename="lib/libgcc_s_dw2-1.dll" />
-		<Unit filename="lib/libjpeg-9.dll" />
-		<Unit filename="lib/libmodplug-1.dll" />
-		<Unit filename="lib/libogg-0.dll" />
-		<Unit filename="lib/libpng16-16.dll" />
-		<Unit filename="lib/libstdc++-6.dll" />
-		<Unit filename="lib/libtiff-5.dll" />
-		<Unit filename="lib/libvorbis-0.dll" />
-		<Unit filename="lib/libvorbisfile-3.dll" />
-		<Unit filename="lib/libwebp-4.dll" />
-		<Unit filename="lib/smpeg2.dll" />
-		<Unit filename="lib/zlib1.dll" />
+		<Unit filename="LICENSE/LICENSE.FLAC.txt" />
+		<Unit filename="LICENSE/LICENSE.freetype.txt" />
+		<Unit filename="LICENSE/LICENSE.jpeg.txt" />
+		<Unit filename="LICENSE/LICENSE.modplug.txt" />
+		<Unit filename="LICENSE/LICENSE.ogg-vorbis.txt" />
+		<Unit filename="LICENSE/LICENSE.png.txt" />
+		<Unit filename="LICENSE/LICENSE.smpeg.txt" />
+		<Unit filename="LICENSE/LICENSE.tiff.txt" />
+		<Unit filename="LICENSE/LICENSE.webp.txt" />
+		<Unit filename="LICENSE/LICENSE.zlib.txt" />
+		<Unit filename="doc/notes.text" />
+		<Unit filename="inc/ICol2D.h" />
+		<Unit filename="inc/cfield.h" />
+		<Unit filename="inc/cfluid.h" />
+		<Unit filename="inc/cg.h" />
+		<Unit filename="inc/cmatrix.h" />
+		<Unit filename="inc/field.hpp" />
+		<Unit filename="inc/fluid.hpp" />
+		<Unit filename="inc/gridsimulator.h" />
+		<Unit filename="inc/liquidsim.h" />
+		<Unit filename="inc/main.hpp" />
+		<Unit filename="inc/potentionalfield.hpp" />
+		<Unit filename="inc/renderer.hpp" />
+		<Unit filename="inc/sdl.hpp" />
+		<Unit filename="inc/sdlerror.hpp" />
+		<Unit filename="inc/sdlimgerror.hpp" />
+		<Unit filename="inc/sdltexture.hpp" />
+		<Unit filename="inc/vector2.h" />
+		<Unit filename="inc/vectorfield.h" />
 		<Unit filename="main.cpp" />
-		<Unit filename="res/background.png" />
-		<Unit filename="res/down.bmp" />
-		<Unit filename="res/foo.png" />
-		<Unit filename="res/hello_world.bmp" />
-		<Unit filename="res/left.bmp" />
-		<Unit filename="res/loaded.png" />
-		<Unit filename="res/press.bmp" />
-		<Unit filename="res/right.bmp" />
-		<Unit filename="res/texture.png" />
-		<Unit filename="res/up.bmp" />
-		<Unit filename="res/viewport.png" />
-		<Unit filename="res/x.bmp" />
+		<Unit filename="res/fluid.rest.cpp.txt" />
+		<Unit filename="res/svg.c.txt" />
 		<Unit filename="src/cfield.cpp">
 			<Option compile="0" />
 			<Option link="0" />
