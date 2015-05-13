@@ -1,3 +1,5 @@
+https://logging.apache.org/log4cxx/
+
 file:///C:/Octave/Octave-3.8.2/README.html
 http://www.openblas.net/
 https://root.cern.ch/root/html/
@@ -11,12 +13,12 @@ http://math.nist.gov/mv++/
 
 http://nptel.ac.in/courses/105103026/34
 
-//http://www.dgp.toronto.edu/~stam/reality/Research/pub.html
-//http://autodeskresearch.com/pdf/talks/jos_gdc03.pdf
-//http://www.dgp.toronto.edu/people/stam/reality/Research/pdf/GDC03.pdf
-//http://www.dgp.utoronto.ca/~stam/reality/Talks/FluidsTalk/FluidsTalkNotes.pdf
-//http://www.mat.ucsb.edu/~wakefield/594cm/assignment.htm
-//http://www.gamasutra.com/view/feature/1549/practical_fluid_dynamics_part_1.php?print=1
+http://www.dgp.toronto.edu/~stam/reality/Research/pub.html
+http://autodeskresearch.com/pdf/talks/jos_gdc03.pdf
+http://www.dgp.toronto.edu/people/stam/reality/Research/pdf/GDC03.pdf
+http://www.dgp.utoronto.ca/~stam/reality/Talks/FluidsTalk/FluidsTalkNotes.pdf
+http://www.mat.ucsb.edu/~wakefield/594cm/assignment.htm
+http://www.gamasutra.com/view/feature/1549/practical_fluid_dynamics_part_1.php?print=1
 
 http://lazyfoo.net/tutorials/SDL/
 https://www.gitignore.io/
