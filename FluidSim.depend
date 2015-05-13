@@ -668,14 +668,9 @@
 	<stdint.h>
 	<SDL.h>
 
-1431341988 source:c:\users\sebastian schrod\documents\codeblocks\fluidsim\main.cpp
-	<cstdlib>
+1431506907 source:c:\users\sebastian schrod\documents\codeblocks\fluidsim\main.cpp
+	<unistd.h>
 	<iostream>
-	<SDL.h>
-	<SDL_image.h>
-	<SDL_ttf.h>
-	<SDL_mixer.h>
-	<SDL_net.h>
 	"main.hpp"
 
 1397856815 c:\users\sebastian schrod\documents\codeblocks\fluidsim\inc\main.hpp

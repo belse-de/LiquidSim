@@ -32,7 +32,7 @@
 					<Add option="-Wall" />
 					<Add option="-pg" />
 					<Add option="-g" />
-					<Add directory="include" />
+					<Add directory="inc" />
 				</Compiler>
 				<Linker>
 					<Add option="-pg -lgmon" />
@@ -44,7 +44,8 @@
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
-					<Add option="-O2" />
+					<Add option="-fomit-frame-pointer" />
+					<Add option="-O" />
 					<Add option="-Wfatal-errors" />
 					<Add directory="include" />
 				</Compiler>
@@ -127,7 +128,9 @@
 			<Option compile="0" />
 			<Option link="0" />
 		</Unit>
-		<Unit filename="src/renderer.c" />
+		<Unit filename="src/renderer.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="src/sdl.cpp" />
 		<Unit filename="src/sdlerror.cpp" />
 		<Unit filename="src/sdlimgerror.cpp" />
