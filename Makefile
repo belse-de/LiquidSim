@@ -11,14 +11,14 @@ AR = ar
 LD = g++
 WINDRES = windres
 
-INC = -I/usr/include/SDL2
+INC = -I/usr/include/SDL2 -Iinc -I.
 CFLAGS = -std=c++11 -fexceptions
 RESINC = 
 LIBDIR =
 LIB =
 LDFLAGS = -lSDL2 -lSDL2_image -lSDL2_ttf -lSDL2_mixer -lSDL2_net
 
-INC_DEBUG = $(INC) -Iinclude
+INC_DEBUG = $(INC)
 CFLAGS_DEBUG = $(CFLAGS) -Wnon-virtual-dtor -Wshadow -Winit-self -Wredundant-decls -Wcast-align -Wundef -Wfloat-equal -Winline -Wunreachable-code -Wmissing-declarations -Wmissing-include-dirs -Wswitch-enum -Wswitch-default -Weffc++ -Wmain -Wextra -Wall -pg -g
 RESINC_DEBUG = $(RESINC)
 RCFLAGS_DEBUG = $(RCFLAGS)
@@ -29,7 +29,7 @@ OBJDIR_DEBUG = obj/Debug
 DEP_DEBUG = 
 OUT_DEBUG = bin/Debug/liquidSim
 
-INC_RELEASE = $(INC) -Iinclude
+INC_RELEASE = $(INC)
 CFLAGS_RELEASE = $(CFLAGS) -O2 -Wfatal-errors
 RESINC_RELEASE = $(RESINC)
 RCFLAGS_RELEASE = $(RCFLAGS)
@@ -75,8 +75,8 @@ $(OBJDIR_DEBUG)/src/sdlerror.o: src/sdlerror.cpp
 $(OBJDIR_DEBUG)/src/sdl.o: src/sdl.cpp
 	$(CXX) $(CFLAGS_DEBUG) $(INC_DEBUG) -c src/sdl.cpp -o $(OBJDIR_DEBUG)/src/sdl.o
 
-$(OBJDIR_DEBUG)/src/renderer.o: src/renderer.c
-	$(CC) $(CFLAGS_DEBUG) $(INC_DEBUG) -c src/renderer.c -o $(OBJDIR_DEBUG)/src/renderer.o
+$(OBJDIR_DEBUG)/src/renderer.o: src/renderer.cpp
+	$(CC) $(CFLAGS_DEBUG) $(INC_DEBUG) -c src/renderer.cpp -o $(OBJDIR_DEBUG)/src/renderer.o
 
 $(OBJDIR_DEBUG)/src/liquidsim.o: src/liquidsim.cpp
 	$(CXX) $(CFLAGS_DEBUG) $(INC_DEBUG) -c src/liquidsim.cpp -o $(OBJDIR_DEBUG)/src/liquidsim.o
@@ -114,8 +114,8 @@ $(OBJDIR_RELEASE)/src/sdlerror.o: src/sdlerror.cpp
 $(OBJDIR_RELEASE)/src/sdl.o: src/sdl.cpp
 	$(CXX) $(CFLAGS_RELEASE) $(INC_RELEASE) -c src/sdl.cpp -o $(OBJDIR_RELEASE)/src/sdl.o
 
-$(OBJDIR_RELEASE)/src/renderer.o: src/renderer.c
-	$(CC) $(CFLAGS_RELEASE) $(INC_RELEASE) -c src/renderer.c -o $(OBJDIR_RELEASE)/src/renderer.o
+$(OBJDIR_RELEASE)/src/renderer.o: src/renderer.cpp
+	$(CC) $(CFLAGS_RELEASE) $(INC_RELEASE) -c src/renderer.cpp -o $(OBJDIR_RELEASE)/src/renderer.o
 
 $(OBJDIR_RELEASE)/src/liquidsim.o: src/liquidsim.cpp
 	$(CXX) $(CFLAGS_RELEASE) $(INC_RELEASE) -c src/liquidsim.cpp -o $(OBJDIR_RELEASE)/src/liquidsim.o
