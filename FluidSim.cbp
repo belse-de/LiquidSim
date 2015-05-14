@@ -88,6 +88,7 @@
 		<Unit filename="inc/cg.h" />
 		<Unit filename="inc/cmatrix.h" />
 		<Unit filename="inc/field.hpp" />
+		<Unit filename="inc/floatvec.hpp" />
 		<Unit filename="inc/fluid.hpp" />
 		<Unit filename="inc/gridsimulator.h" />
 		<Unit filename="inc/liquidsim.h" />
@@ -119,6 +120,9 @@
 			<Option compile="0" />
 			<Option link="0" />
 		</Unit>
+		<Unit filename="src/floatvec.cpp" />
+		<Unit filename="src/floatvec_operators_reference.cpp" />
+		<Unit filename="src/floatvec_operators_value.cpp" />
 		<Unit filename="src/fluid.cpp">
 			<Option compile="0" />
 			<Option link="0" />
@@ -128,9 +132,7 @@
 			<Option compile="0" />
 			<Option link="0" />
 		</Unit>
-		<Unit filename="src/renderer.c">
-			<Option compilerVar="CC" />
-		</Unit>
+		<Unit filename="src/renderer.cpp" />
 		<Unit filename="src/sdl.cpp" />
 		<Unit filename="src/sdlerror.cpp" />
 		<Unit filename="src/sdlimgerror.cpp" />

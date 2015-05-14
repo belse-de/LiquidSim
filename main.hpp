@@ -9,7 +9,7 @@
 
 // intrinsics / cpu includes
 #include <x86intrin.h>
-
+#include <cblas.h>
 // SDL includes / fol multi media
 #include <SDL.h>
 //XXX: NO NEEDED, YET.
@@ -19,8 +19,8 @@
 //#include <SDL_net.h>
 
 // std defines for truncating/clamping values
-#define min(x,y) ((x)<(y))?(x):(y)
-#define max(x,y) ((x)>(y))?(x):(y)
+//#define min(x,y) ((x)<(y))?(x):(y)
+//#define max(x,y) ((x)>(y))?(x):(y)
 #define minmax(x,y,z) min(max((x),(y)),(z))
 
 //local headers

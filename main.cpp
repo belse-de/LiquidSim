@@ -49,6 +49,7 @@ int main(int argC, char** argS)
         }
     }
 
+    //if not set, set default values
     iterations = (iterations<=0) ? DEFAULT_I : iterations;
     width      = (width<=0)      ? DEFAULT_W : width;
     height     = (height<=0)     ? DEFAULT_H : height;
@@ -83,6 +84,13 @@ int main(int argC, char** argS)
     FluidSim sim(width, height, scale_m);
     sim.run(iterations);
     */
+    
+#ifndef NDEBUG
+    printf("+------------------------------+\n");
+    printf("| stopping sim                 |\n");
+    printf("+------------------------------+\n");
+    printf("\n");
+#endif // NDEBUG
 
     exit(EXIT_SUCCESS);
 }

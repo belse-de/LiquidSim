@@ -1,6 +1,8 @@
 #ifndef SDL_APP_H
 #define SDL_APP_H
 
+#include <string>
+
 #include <SDL.h>
 
 
