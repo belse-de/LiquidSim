@@ -113,7 +113,6 @@ void SdlApp::loop(){
     int height = M;
     SDL_RenderClear( renderer );
     SDL_RenderSetViewport( renderer, nullptr );
-    SDL_Rect renderQuad = { 0, 0, width, height };
 
     SDL_TextureAccess access = SDL_TEXTUREACCESS_STREAMING;
 
@@ -306,22 +305,6 @@ void SdlApp::loop(){
     SDL_DestroyTexture( texture );
     texture = nullptr;
     //if(!saveScreenshotBMP("stable-100.bmp", window, renderer)){ std::cerr << "could not save pic." << std::endl; }
-}
-
-SDL_Surface* SdlApp::loadSurface( std::string path ){
-    //Load image at specified path
-    SDL_Surface* loadedSurface = IMG_Load( path.c_str() );
-    if( loadedSurface == nullptr ) { throw SdlImgError("Unable to load image " + path); }
-
-    //Convert surface to screen format
-    SDL_Surface* optimizedSurface = SDL_ConvertSurface( loadedSurface, screenSurface->format, 0 );
-    if( optimizedSurface == nullptr ) { throw SdlError("Unable to optimize image " + path); }
-
-    //Get rid of old loaded surface
-    SDL_FreeSurface( loadedSurface );
-    loadedSurface = nullptr;
-
-    return optimizedSurface;
 }
 
 SDL_Texture* SdlApp::loadTexture( std::string path ){

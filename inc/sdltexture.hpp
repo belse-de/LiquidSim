@@ -29,6 +29,10 @@ class SdlTexture
 
     protected:
     private:
+        //no copies allowed , the verbose way; thanks c++11 ;)
+        SdlTexture(const SdlTexture&) = delete;
+        SdlTexture operator=(const SdlTexture&) = delete;
+
         SDL_Renderer* m_renderer;
         std::string m_path;
         int m_width; //!< Member variable "m_width"

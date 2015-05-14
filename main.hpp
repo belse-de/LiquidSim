@@ -7,8 +7,7 @@
 #include <cstring>
 #include <cmath>
 
-// intrinsics / cpu includes
-#include <x86intrin.h>
+
 #include <cblas.h>
 // SDL includes / fol multi media
 #include <SDL.h>

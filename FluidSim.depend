@@ -679,7 +679,7 @@
 	"sdlimgerror.hpp"
 	"sdltexture.hpp"
 
-1431533431 c:\users\sebastian schrod\documents\codeblocks\fluidsim\inc\sdl.hpp
+1431641111 c:\users\sebastian schrod\documents\codeblocks\fluidsim\inc\sdl.hpp
 	<string>
 	<SDL.h>
 
@@ -689,7 +689,7 @@
 1397724860 c:\users\sebastian schrod\documents\codeblocks\fluidsim\inc\sdlimgerror.hpp
 	<stdexcept>
 
-1399219208 c:\users\sebastian schrod\documents\codeblocks\fluidsim\inc\sdltexture.hpp
+1431640684 c:\users\sebastian schrod\documents\codeblocks\fluidsim\inc\sdltexture.hpp
 	<string>
 	<SDL.h>
 
@@ -708,12 +708,11 @@
 	<stdint.h>
 	<SDL.h>
 
-1431638003 c:\users\sebastian schrod\documents\codeblocks\fluidsim\main.hpp
+1431638358 c:\users\sebastian schrod\documents\codeblocks\fluidsim\main.hpp
 	<cstdlib>
 	<cstdio>
 	<cstring>
 	<cmath>
-	<x86intrin.h>
 	<cblas.h>
 	<SDL.h>
 	"sdl.hpp"
@@ -747,12 +746,11 @@
 
 1428417179 c:\users\sebastian schrod\documents\codeblocks\fluidsim\inc\cmatrix.h
 
-1431638003 c:\users\sebastian schrod\documents\codeblocks\fluidsim\\main.hpp
+1431638358 c:\users\sebastian schrod\documents\codeblocks\fluidsim\\main.hpp
 	<cstdlib>
 	<cstdio>
 	<cstring>
 	<cmath>
-	<x86intrin.h>
 	<cblas.h>
 	<SDL.h>
 	"sdl.hpp"
@@ -782,4 +780,26 @@
 1427234273 c:\development\openblas\openblas-v0.2.14-win32\include\openblas_config.h
 	<stdio.h>
 	<complex.h>
+
+1431639998 source:c:\users\sebastian schrod\documents\codeblocks\fluidsim\src\floatvec.cpp
+	<cassert>
+	<cstdlib>
+	<cstring>
+	<cmath>
+	"floatvec.hpp"
+
+1431638589 c:\users\sebastian schrod\documents\codeblocks\fluidsim\inc\floatvec.hpp
+	<x86intrin.h>
+
+1431640054 source:c:\users\sebastian schrod\documents\codeblocks\fluidsim\src\floatvec_operators_reference.cpp
+	<cassert>
+	<cstdlib>
+	<cmath>
+	"floatvec.hpp"
+
+1431640290 source:c:\users\sebastian schrod\documents\codeblocks\fluidsim\src\floatvec_operators_value.cpp
+	<cassert>
+	<cstdlib>
+	<cmath>
+	"floatvec.hpp"
 

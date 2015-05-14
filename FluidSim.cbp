@@ -32,7 +32,6 @@
 					<Add option="-Wall" />
 					<Add option="-pg" />
 					<Add option="-g" />
-					<Add directory="inc" />
 				</Compiler>
 				<Linker>
 					<Add option="-pg -lgmon" />
@@ -47,7 +46,6 @@
 					<Add option="-fomit-frame-pointer" />
 					<Add option="-O" />
 					<Add option="-Wfatal-errors" />
-					<Add directory="include" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -62,14 +60,24 @@
 			<Add directory="C:/Development/SDL/SDL2_ttf-2.0.12/i686-w64-mingw32/include/SDL2" />
 			<Add directory="C:/Development/SDL/SDL2_mixer-2.0.0/i686-w64-mingw32/include/SDL2" />
 			<Add directory="C:/Development/SDL/SDL2_net-2.0.0/i686-w64-mingw32/include/SDL2" />
+			<Add directory="C:/Development/openBLAS/OpenBLAS-v0.2.14-Win32/include" />
+			<Add directory="inc" />
 		</Compiler>
 		<Linker>
-			<Add option="-lmingw32 -lSDL2main -lSDL2 -lSDL2_image -lSDL2_ttf -lSDL2_mixer -lSDL2_net" />
+			<Add library="mingw32" />
+			<Add library="openblas" />
+			<Add library="SDL2main" />
+			<Add library="SDL2" />
+			<Add library="SDL2_image" />
+			<Add library="SDL2_ttf" />
+			<Add library="SDL2_mixer" />
+			<Add library="SDL2_net" />
 			<Add directory="C:/Development/SDL/SDL2-2.0.3/i686-w64-mingw32/lib" />
 			<Add directory="C:/Development/SDL/SDL2_image-2.0.0/i686-w64-mingw32/lib" />
 			<Add directory="C:/Development/SDL/SDL2_ttf-2.0.12/i686-w64-mingw32/lib" />
 			<Add directory="C:/Development/SDL/SDL2_mixer-2.0.0/i686-w64-mingw32/lib" />
 			<Add directory="C:/Development/SDL/SDL2_net-2.0.0/i686-w64-mingw32/lib" />
+			<Add directory="C:/Development/openBLAS/OpenBLAS-v0.2.14-Win32/lib" />
 		</Linker>
 		<Unit filename="LICENSE/LICENSE.FLAC.txt" />
 		<Unit filename="LICENSE/LICENSE.freetype.txt" />
@@ -92,7 +100,6 @@
 		<Unit filename="inc/fluid.hpp" />
 		<Unit filename="inc/gridsimulator.h" />
 		<Unit filename="inc/liquidsim.h" />
-		<Unit filename="inc/main.hpp" />
 		<Unit filename="inc/potentionalfield.hpp" />
 		<Unit filename="inc/renderer.hpp" />
 		<Unit filename="inc/sdl.hpp" />
@@ -102,6 +109,7 @@
 		<Unit filename="inc/vector2.h" />
 		<Unit filename="inc/vectorfield.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="main.hpp" />
 		<Unit filename="res/fluid.rest.cpp.txt" />
 		<Unit filename="res/svg.c.txt" />
 		<Unit filename="src/cfield.cpp">
@@ -120,9 +128,18 @@
 			<Option compile="0" />
 			<Option link="0" />
 		</Unit>
-		<Unit filename="src/floatvec.cpp" />
-		<Unit filename="src/floatvec_operators_reference.cpp" />
-		<Unit filename="src/floatvec_operators_value.cpp" />
+		<Unit filename="src/floatvec.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
+		<Unit filename="src/floatvec_operators_reference.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
+		<Unit filename="src/floatvec_operators_value.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
 		<Unit filename="src/fluid.cpp">
 			<Option compile="0" />
 			<Option link="0" />

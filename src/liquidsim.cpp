@@ -70,7 +70,8 @@ void LiquidSim::set_source(int N, float* x, float* s, float dt)
 {
     int x_size=(N+2)*(N+2);
     for (int i=0; i<x_size; i++) {
-            if(0. != s[i]) x[i] = dt*s[i];// bad loop form no conditional
+            //FIXME: NE float equal
+            if(0. != s[i]) x[i] = dt*s[i];// bad loop form; no conditional
     }
 }
 

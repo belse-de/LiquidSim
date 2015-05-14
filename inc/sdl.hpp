@@ -14,20 +14,21 @@ class SdlApp
 
         bool draw();
         void loop();
-        SDL_Surface* loadSurface( std::string path );
+
         SDL_Texture* loadTexture( std::string path );
         bool saveScreenshotBMP(std::string filepath, SDL_Window* SDLWindow, SDL_Renderer* SDLRenderer);
     protected:
     private:
+        //no copies allowed , the verbose way; thanks c++11 ;)
+        SdlApp(const SdlApp&) = delete;
+        SdlApp operator=(const SdlApp&) = delete;
+
         //Screen dimension constants
         const int screenWidth;
         const int screenHeight;
 
         //The window we'll be rendering to
         SDL_Window* window;
-
-        //The surface contained by the window
-        SDL_Surface* screenSurface;
 
         //The window renderer
         SDL_Renderer* renderer;
