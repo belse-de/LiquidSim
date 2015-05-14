@@ -1,7 +1,7 @@
 #ifndef CFIELD_H
 #define CFIELD_H
 
-#include "CMatrix.h"
+#include "cmatrix.h"
 
 
 class CField : public CMatrix
