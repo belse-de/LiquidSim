@@ -19,6 +19,8 @@ class FloatVec
     float     sqSum();
     float     avg();
     float     infNorm();
+    //TODO: normal vector, /dot product
+    //XXX: shift/rotate if needed
 
     float     operator()( const int pos );
 

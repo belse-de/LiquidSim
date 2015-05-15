@@ -51,6 +51,9 @@ class Field
         const int m_dimention_size; //!< Member variable "m_dimention_size"
         const int m_dimention_x;    //!< Member variable "m_dimention_x"
         const int m_dimention_y;    //!< Member variable "m_dimention_y"
+        
+        constexpr static const float visc = 1.512041288; // uPa * s + K^-1/2
+        constexpr static const float diff = 1.5e-5; //m^2 * s^1
 
         constexpr static const float f_esp    = 1.19209289551e-7;
         constexpr static const float f_pi     = 3.14159265358979323846;
