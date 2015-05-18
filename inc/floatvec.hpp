@@ -51,19 +51,13 @@ class FloatVec
     //FloatVec  operator>>( const unsigned int rotateLeft );
 
   protected:
-
+      FloatVec();
+    float*  _data;
+    size_t  _length;
+    size_t  _iterationSteps;
 
   private:
-    float*  _data;
-    __m128* _data4;
-    __m256* _data8;
 
-    size_t  _length;
-    size_t  _length4;
-    size_t  _length8;
-
-    bool    isDivisibleBy4;
-    bool    isDivisibleBy8;
 };
 
 #endif // FLOATVEC_H_INCLUDED

@@ -31,6 +31,7 @@
 					<Add option="-Wall" />
 					<Add option="-pg" />
 					<Add option="-g" />
+					<Add directory="inc" />
 				</Compiler>
 				<Linker>
 					<Add option="-pg -lgmon" />
@@ -45,6 +46,7 @@
 					<Add option="-fomit-frame-pointer" />
 					<Add option="-O" />
 					<Add option="-Wfatal-errors" />
+					<Add directory="inc" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -99,6 +101,9 @@
 		<Unit filename="inc/cmatrix.h" />
 		<Unit filename="inc/field.hpp" />
 		<Unit filename="inc/floatvec.hpp" />
+		<Unit filename="inc/floatvec_ps_m128.hpp" />
+		<Unit filename="inc/floatvec_ps_m256.hpp" />
+		<Unit filename="inc/liquid.h" />
 		<Unit filename="inc/liquidsim.h" />
 		<Unit filename="inc/renderer.hpp" />
 		<Unit filename="inc/sdl.hpp" />
@@ -109,21 +114,17 @@
 		<Unit filename="main.hpp" />
 		<Unit filename="res/fluid.rest.cpp.txt" />
 		<Unit filename="res/svg.c.txt" />
-		<Unit filename="src/cfield.cpp">
-			<Option compile="0" />
-			<Option link="0" />
-		</Unit>
-		<Unit filename="src/cfluid.cpp">
-			<Option compile="0" />
-			<Option link="0" />
-		</Unit>
-		<Unit filename="src/cmatrix.cpp">
-			<Option compile="0" />
-			<Option link="0" />
-		</Unit>
+		<Unit filename="src/cfield.cpp" />
+		<Unit filename="src/cfluid.cpp" />
+		<Unit filename="src/cmatrix.cpp" />
 		<Unit filename="src/floatvec.cpp" />
 		<Unit filename="src/floatvec_operators_reference.cpp" />
 		<Unit filename="src/floatvec_operators_value.cpp" />
+		<Unit filename="src/floatvec_ps_m128.cpp" />
+		<Unit filename="src/floatvec_ps_m128_operators_reference.cpp" />
+		<Unit filename="src/floatvec_ps_m256.cpp" />
+		<Unit filename="src/floatvec_ps_m256_operators_reference.cpp" />
+		<Unit filename="src/liquid.cpp" />
 		<Unit filename="src/liquidsim.cpp" />
 		<Unit filename="src/renderer.cpp" />
 		<Unit filename="src/sdl.cpp" />
