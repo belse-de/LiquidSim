@@ -781,14 +781,14 @@
 	<stdio.h>
 	<complex.h>
 
-1431707404 source:c:\users\sebastian schrod\documents\codeblocks\fluidsim\src\floatvec.cpp
+1432047225 source:c:\users\sebastian schrod\documents\codeblocks\fluidsim\src\floatvec.cpp
 	<cassert>
 	<cstdlib>
 	<cstring>
 	<cmath>
 	"floatvec.hpp"
 
-1431707368 c:\users\sebastian schrod\documents\codeblocks\fluidsim\inc\floatvec.hpp
+1432057695 c:\users\sebastian schrod\documents\codeblocks\fluidsim\inc\floatvec.hpp
 	<x86intrin.h>
 
 1431705719 source:c:\users\sebastian schrod\documents\codeblocks\fluidsim\src\floatvec_operators_reference.cpp
@@ -797,7 +797,7 @@
 	<cmath>
 	"floatvec.hpp"
 
-1431640290 source:c:\users\sebastian schrod\documents\codeblocks\fluidsim\src\floatvec_operators_value.cpp
+1432057748 source:c:\users\sebastian schrod\documents\codeblocks\fluidsim\src\floatvec_operators_value.cpp
 	<cassert>
 	<cstdlib>
 	<cmath>
@@ -848,4 +848,13 @@
 
 1431709119 c:\users\sebastian schrod\documents\codeblocks\fluidsim\inc\floatvec_ps_m256.hpp
 	<floatvec.hpp>
+
+1431709203 source:c:\users\sebastian schrod\documents\codeblocks\fluidsim\src\floatvec_ps_m256_operators_reference.cpp
+	<cassert>
+	<cstdlib>
+	<cstdint>
+	<cstring>
+	<cmath>
+	"floatvec.hpp"
+	"floatvec_ps_m256.hpp"
 

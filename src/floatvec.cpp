@@ -81,7 +81,7 @@ float     FloatVec::infNorm()
   return sqrtf(sqSum());
 }
 
-float     FloatVec::operator()( const int pos )
+float&    FloatVec::operator()( const int pos )
 {
   int pos_inBound = _length + (pos %_length);
   return _data[pos_inBound];

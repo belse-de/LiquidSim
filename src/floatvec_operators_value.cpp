@@ -34,6 +34,13 @@ FloatVec  FloatVec::operator- ( const float c )
   return result;
 }
 
+FloatVec  FloatVec::operator- ()
+{
+  FloatVec result(*this);
+  result *= -1.;
+  return result;
+}
+
 FloatVec  FloatVec::operator* ( const FloatVec& righthandside )
 {
   FloatVec result(*this);

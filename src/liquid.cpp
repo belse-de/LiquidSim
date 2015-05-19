@@ -1,6 +1,13 @@
 #include "liquid.h"
 
-Liquid::Liquid()
+Liquid::Liquid(size_t width, size_t height) :
+    _width(width), _height(height),
+    density_0(width*height),density_0_weight(width*height),
+    density_t0(width*height), density_t1(width*height),
+    velocity_x_0(width*height), velocity_y_0(width*height),
+    velocity_0_weight(width*height),
+    velocity_x_t0(width*height), velocity_y_t0(width*height),
+    velocity_x_t1(width*height), velocity_y_t1(width*height)
 {
     //ctor
 }
@@ -47,13 +54,13 @@ void Liquid::density_step()
     diffuse(density_t0, density_t1, diff);
     density_t0.swap(density_t1);
 
-    setBoundary(density_t0, density_t1, BOUNDARY_MODE_DENSITY);
+    setBoundary(density_t0, density_t1, BoundaryMode::BOUNDARY_MODE_DENSITY);
     density_t0.swap(density_t1);
 
     advect(density_t0, density_t1, velocity_x_t0, velocity_y_t0);
     density_t0.swap(density_t1);
 
-    setBoundary(density_t0, density_t1, BOUNDARY_MODE_DENSITY);
+    setBoundary(density_t0, density_t1, BoundaryMode::BOUNDARY_MODE_DENSITY);
     density_t0.swap(density_t1);
 }
 
@@ -69,8 +76,8 @@ void Liquid::velocity_step()
     velocity_x_t0.swap(velocity_x_t1);
     velocity_y_t0.swap(velocity_y_t1);
 
-    setBoundary(velocity_x_t0, velocity_x_t1, BOUNDARY_MODE_VELOCITY_X);
-    setBoundary(velocity_y_t0, velocity_y_t1, BOUNDARY_MODE_VELOCITY_Y);
+    setBoundary(velocity_x_t0, velocity_x_t1, BoundaryMode::BOUNDARY_MODE_VELOCITY_X);
+    setBoundary(velocity_y_t0, velocity_y_t1, BoundaryMode::BOUNDARY_MODE_VELOCITY_Y);
     velocity_x_t0.swap(velocity_x_t1);
     velocity_y_t0.swap(velocity_y_t1);
 
@@ -78,8 +85,8 @@ void Liquid::velocity_step()
     velocity_x_t0.swap(velocity_x_t1);
     velocity_y_t0.swap(velocity_y_t1);
 
-    setBoundary(velocity_x_t0, velocity_x_t1, BOUNDARY_MODE_VELOCITY_X);
-    setBoundary(velocity_y_t0, velocity_y_t1, BOUNDARY_MODE_VELOCITY_Y);
+    setBoundary(velocity_x_t0, velocity_x_t1, BoundaryMode::BOUNDARY_MODE_VELOCITY_X);
+    setBoundary(velocity_y_t0, velocity_y_t1, BoundaryMode::BOUNDARY_MODE_VELOCITY_Y);
     velocity_x_t0.swap(velocity_x_t1);
     velocity_y_t0.swap(velocity_y_t1);
 
@@ -90,25 +97,57 @@ void Liquid::velocity_step()
     velocity_x_t0.swap(velocity_x_t1);
     velocity_y_t0.swap(velocity_y_t1);
 
-    setBoundary(velocity_x_t0, velocity_x_t1, BOUNDARY_MODE_VELOCITY_X);
-    setBoundary(velocity_y_t0, velocity_y_t1, BOUNDARY_MODE_VELOCITY_Y);
+    setBoundary(velocity_x_t0, velocity_x_t1, BoundaryMode::BOUNDARY_MODE_VELOCITY_X);
+    setBoundary(velocity_y_t0, velocity_y_t1, BoundaryMode::BOUNDARY_MODE_VELOCITY_Y);
     velocity_x_t0.swap(velocity_x_t1);
     velocity_y_t0.swap(velocity_y_t1);
 }
 
 void Liquid::addSource(FloatVec& add, FloatVec& result)
 {
-    result += _dt * add;
+    result += add * dt;
 }
 
 void Liquid::setSource(FloatVec& add, FloatVec& mask, FloatVec& result)
 {
-    result = mask * add + (1-mask) * result);
+    result = mask * add + (-mask+1.) * result;
 }
 
-void diffuse(FloatVec& velocity_x_t0, FloatVec& velocity_x_t1, float diff)
+void Liquid::diffuse(FloatVec& x_t0, FloatVec& x_t1, float diff)
 {
     float c = diff * block_size_m * block_size_m;
-    float dt_ = (dt>c) ? (c) : (dt);
-    float a  = dt_ * c;
+    //float dt_ = (dt>c) ? (c) : (dt);
+    float a  = dt * c;
+
+    //Gauss-Seidel relaxation.
+    for(int k=0; k<K_MAX; k++)
+    {
+        for(unsigned int i=1; i<_width-1; i++)
+        {
+            for(unsigned int j=1; j<_height-1; j++)
+            {
+                x_t1(i+j*_width) = (x_t0(i+j*_width)
+                          + a*(
+                               x_t1(i-1+j*_width)   + x_t1(i+1+j*_width)  +
+                               x_t1(i+(j-1)*_width) + x_t1(i+(j+1)*_width)
+                               )
+                          ) / (1+4*a);
+            }
+        }
+    }
+}
+
+void Liquid::setBoundary(FloatVec& d_t0, FloatVec& d_t1, BoundaryMode mode)
+{
+    d_t1 = d_t0;
+}
+
+void Liquid::advect(FloatVec& d_t0, FloatVec& d_t1, FloatVec& velocity_x, FloatVec& velocity_y)
+{
+    d_t1 = d_t0;
+}
+
+void Liquid::project(FloatVec& v_x_t0, FloatVec& v_y_t0, FloatVec& velocity_x, FloatVec& velocity_y)
+{
+    ;
 }

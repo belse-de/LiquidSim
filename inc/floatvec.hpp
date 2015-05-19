@@ -22,7 +22,7 @@ class FloatVec
     //TODO: normal vector, /dot product
     //XXX: shift/rotate if needed
 
-    float     operator()( const int pos );
+    float&     operator()( const int pos );
 
     FloatVec& operator= ( const FloatVec& righthandside );
     bool      operator==( const FloatVec& righthandside ) const;
@@ -40,6 +40,7 @@ class FloatVec
     FloatVec  operator+ ( const float c );
     FloatVec  operator- ( const FloatVec& righthandside );
     FloatVec  operator- ( const float c );
+    FloatVec  operator- ();
     FloatVec  operator* ( const FloatVec& righthandside );
     FloatVec  operator* ( const float c );
     FloatVec  operator/ ( const FloatVec& righthandside );
@@ -51,7 +52,7 @@ class FloatVec
     //FloatVec  operator>>( const unsigned int rotateLeft );
 
   protected:
-      FloatVec();
+    FloatVec();
     float*  _data;
     size_t  _length;
     size_t  _iterationSteps;
